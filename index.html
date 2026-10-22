@@ -24,6 +24,7 @@
 <div class="page" id="home">
   <section class="hero"><div class="wrap">
     <div>
+      <p class="eyebrow">An open research consortium</p>
       <h1>Spatial Atlas of Human Anatomy</h1>
       <p class="lead">An open, multimodal reference of human tissues at subcellular resolution: matched RNA, protein and
         histology on the same tissue, across gut and lymphoid organs and circulating blood, in health and selected disease.</p>
@@ -40,6 +41,17 @@
       <div><img src="assets/img/hero_he.jpg" alt="H&amp;E of a human appendix section"><figcaption>H&amp;E</figcaption></div>
       <div><img src="assets/img/hero_cells.jpg" alt="The same section, 207,341 cells coloured by cell type from in situ RNA"><figcaption>Spatial transcriptomics: 207,341 cells by type</figcaption></div>
     </figure>
+  </div></section>
+
+  <section class="mission"><div class="wrap">
+    <div>
+      <p class="eyebrow">Our mission</p>
+      <p class="quote">Every disease starts somewhere in a tissue. To see what goes wrong, we first need a clear,
+        shared picture of what healthy tissue looks like, cell by cell, and we need it to be free for everyone.</p>
+      <p>SAHA builds that picture. We measure thousands of genes and dozens of proteins in place, on the same
+        tissue section a pathologist reads, and release the results openly so any lab, clinic or student can use them.</p>
+    </div>
+    <img src="assets/img/hero_cells.jpg" alt="Appendix section with every cell coloured by its type">
   </div></section>
 
   <section><div class="wrap">
@@ -68,6 +80,50 @@
     <div class="tablewrap"><table>
       <thead><tr><th>Organ</th><th class="n">Donor cores</th><th class="n">Acquisitions</th><th class="n">Cells</th><th>Assays</th><th>Tissue states</th></tr></thead>
       <tbody id="organTable"></tbody></table></div>
+  </div></section>
+
+  <section class="soft"><div class="wrap">
+    <h2>From tissue to open atlas</h2>
+    <ol class="steps">
+      <li><b>Donated tissue</b><span>Healthy and diseased tissue, given by patients and donors, selected and
+        annotated by pathologists.</span></li>
+      <li><b>Measured in place</b><span>RNA, protein and H&amp;E captured on the same tissue, so every cell keeps its
+        neighbourhood.</span></li>
+      <li><b>Integrated</b><span>Cells segmented, typed and matched across platforms and organs into one reference.</span></li>
+      <li><b>Shared openly</b><span>Data, code and browsers released free under open licences for anyone to reuse.</span></li>
+    </ol>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Why it matters</h2>
+    <div class="grid">
+      <div class="card"><h3>A baseline for medicine</h3><p>Knowing what normal looks like at single-cell resolution helps
+        pathologists and researchers spot the earliest changes in disease.</p></div>
+      <div class="card"><h3>Diseases side by side</h3><p>Inflammatory bowel disease and colorectal, pancreatic and prostate
+        cancer profiled with the same methods as healthy tissue, so differences are real, not technical.</p></div>
+      <div class="card"><h3>Fuel for AI</h3><p>Matched histology and molecular data teach models to read molecular
+        states from routine H&amp;E slides that every hospital already makes.</p></div>
+      <div class="card"><h3>Open to all</h3><p>No paywalls. Students, small labs and hospitals anywhere get the same
+        data as the largest centres.</p></div>
+    </div>
+  </div></section>
+
+  <section class="soft"><div class="wrap">
+    <h2>Milestones</h2>
+    <ol class="timeline">
+      <li><time>2022</time>Spatial omics review in <i>Genome Biology</i> lays out the multimodal approach</li>
+      <li><time>2023</time>Weill Cornell Medicine and NanoString launch the Spatial Atlas of Human Anatomy</li>
+      <li><time>2023</time>SAHA presented as a plenary talk at the American Society of Human Genetics</li>
+      <li><time>2025</time>Spatial Touchstone benchmarking published in <i>Nature Biotechnology</i></li>
+      <li><time>2025</time>SAHA atlas preprint posted on bioRxiv</li>
+      <li><time>2026</time>Release v1: 12.4 million cells across 10 organs, shared with reviewers</li>
+      <li class="next"><time>Next</time>Public release through AWS Open Data, more organs, and the SAHA Explorer browser</li>
+    </ol>
+  </div></section>
+
+  <section class="thanks"><div class="wrap">
+    <p>SAHA exists because of the patients and donors who gave tissue for research, and their families.
+      We are deeply grateful.</p>
   </div></section>
 
   <section id="partners"><div class="wrap">
@@ -274,9 +330,47 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
     <a class="card" href="https://github.com/saha-project"><h3>Use and cite</h3>
       <p>Build on the data and code, report issues, and cite the preprint when you do.</p></a>
   </div>
+</div></section>
+
+<section class="soft"><div class="wrap">
+  <h2>What your support makes possible</h2>
+  <div class="grid">
+    <div class="card"><h3>Free, permanent data hosting</h3><p>Keeping terabytes of images and cell data online and
+      downloadable at no cost to users.</p></div>
+    <div class="card"><h3>New organs and donors</h3><p>Extending the atlas to more tissues and a wider range of ages,
+      sexes and ancestries.</p></div>
+    <div class="card"><h3>Training and outreach</h3><p>Workshops, tutorials and early access for students and labs new
+      to spatial biology.</p></div>
+    <div class="card"><h3>Community tools</h3><p>Open browsers and analysis software that anyone can use and improve.</p></div>
+  </div>
+  <div class="give">
+    <div><h3>Make a gift</h3><p>Gifts from individuals, foundations and companies directly fund open data and new tissue.
+      Contact us and we will help you give in the way that suits you.</p></div>
+    <a class="btn" href="mailto:chm2042@med.cornell.edu,jip2007@med.cornell.edu?subject=Gift%20to%20SAHA">Talk to us about giving</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Frequently asked questions</h2>
+  <details><summary>Is SAHA data free to use?</summary><p>Yes. Data are released under CC-BY 4.0 and code under MIT:
+    reuse them for any purpose, with attribution.</p></details>
+  <details><summary>When will the data be publicly downloadable?</summary><p>Release v1 is shared with reviewers now.
+    Public download through the AWS Open Data Program and Zenodo opens when the atlas paper is published. Until then,
+    <a href="#data">request access</a>.</p></details>
+  <details><summary>Can my institution contribute data?</summary><p>Yes. We welcome spatial omics data on human tissue.
+    See the <a href="https://github.com/saha-project/saha-data-access/blob/main/docs/CONTRIBUTING.md">submission guide</a>
+    or write to us.</p></details>
+  <details><summary>How is donor privacy protected?</summary><p>Released data are de-identified. Data with additional
+    consent restrictions, such as the astronaut blood samples, are shared only under controlled access.</p></details>
 </div></section></div>
 
 </main>
+
+<section class="cta"><div class="wrap">
+  <div><h2>Help build an open map of the human body</h2>
+    <p>Use the data, contribute tissue or data, partner with us, or support the work.</p></div>
+  <div><a class="btn light" href="#support">Get involved</a><a class="btn ghost" href="#data">Explore the data</a></div>
+</div></section>
 
 <footer id="contact"><div class="wrap">
   <p>Questions, collaborations or data contributions: Jiwoon Park, Ph.D.
