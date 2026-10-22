@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAHA — Spatial Atlas of Human Anatomy</title>
+<meta name="description" content="The Spatial Atlas of Human Anatomy (SAHA): an open, multimodal, subcellular-resolution spatial reference of human tissues — CosMx and Xenium RNA, protein and H&amp;E across 10 organs and PBMCs.">
+<link rel="icon" href="assets/img/saha_emblem.png">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="brand" href="#home"><img src="assets/img/saha_emblem.png" alt="">SAHA</a>
+  <nav>
+    <a href="#home">Home</a><a href="#data">Data</a><a href="#code">Code</a><a href="#publications">Publications</a>
+    <a href="#team">Team</a><a href="#talks">Talks</a><a href="#news">News</a><a href="#support">Support</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- ============ HOME ============ -->
+<div class="page" id="home">
+  <section class="hero"><div class="wrap">
+    <div>
+      <h1>Spatial Atlas of Human Anatomy</h1>
+      <p class="lead">An open, multimodal reference of human tissues at subcellular resolution: matched RNA, protein and
+        histology on the same tissue, across gut and lymphoid organs and circulating blood, in health and selected disease.</p>
+      <div class="stats">
+        <div class="stat"><b>15.9M</b><span>cells profiled</span></div>
+        <div class="stat"><b>150</b><span>donors</span></div>
+        <div class="stat"><b>10</b><span>organs, plus PBMCs</span></div>
+        <div class="stat"><b>12.4M</b><span>cells in open release v1</span></div>
+      </div>
+      <a class="btn" href="#data">Get the data</a>
+      <a class="btn ghost" href="https://s3.wasabisys.com/saha-public/docs/gallery/index.html">Browse the gallery</a>
+    </div>
+    <figure class="pair">
+      <div><img src="assets/img/hero_he.jpg" alt="H&amp;E of a human appendix section"><figcaption>H&amp;E</figcaption></div>
+      <div><img src="assets/img/hero_cells.jpg" alt="The same section, 207,341 cells coloured by cell type from in situ RNA"><figcaption>Spatial transcriptomics: 207,341 cells by type</figcaption></div>
+    </figure>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>About SAHA</h2>
+    <p class="lead">SAHA maps how genes, proteins, cells and tissues are organized and interact across the human body,
+      using spatial omics data from donors of varied ages, sexes and ancestries. The goal is a shared reference that
+      improves our understanding of human biology, diagnostics and precision medicine.</p>
+    <div class="grid" style="margin-top:24px">
+      <div class="card"><h3>Organs</h3><p>Appendix, bone marrow, colon, ileum, liver, lymph node, pancreas, prostate,
+        rectum and stomach, plus circulating PBMCs. More organs are planned.</p></div>
+      <div class="card"><h3>Health and disease</h3><p>Healthy reference tissue, with inflammatory bowel disease,
+        colorectal, pancreatic and prostate cancer as comparators.</p></div>
+      <div class="card"><h3>Platforms</h3><p>CosMx RNA (1K–19K-plex) and 64-plex protein, Xenium (377-plex to 5K), with
+        matched H&amp;E, linked to histopathology annotations and clinical metadata.</p></div>
+      <div class="card"><h3>Open by design</h3><p>FAIR data in SpatialData format under CC-BY 4.0, analysis code under MIT,
+        and an interactive browser.</p></div>
+    </div>
+  </div></section>
+
+  <section id="coverage"><div class="wrap">
+    <h2>Organ coverage</h2>
+    <p class="muted">Cells per organ in open release v1, by platform. Hover a bar for exact counts.</p>
+    <div class="legend"><span><i style="background:var(--primary)"></i>CosMx (RNA + protein)</span>
+      <span><i style="background:var(--teal)"></i>Xenium (RNA)</span></div>
+    <div id="organChart"></div><div class="tip" id="tip" hidden></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Organ</th><th class="n">Donor cores</th><th class="n">Acquisitions</th><th class="n">Cells</th><th>Assays</th><th>Tissue states</th></tr></thead>
+      <tbody id="organTable"></tbody></table></div>
+  </div></section>
+
+  <section id="partners"><div class="wrap">
+    <h2>Partners</h2>
+    <div class="logo-group"><h3>Academic and research partners</h3><div class="logos">
+      <img src="assets/img/logos/Logo_WCM.png" alt="Weill Cornell Medicine">
+      <img src="assets/img/logos/Logo_StJude.png" alt="St. Jude Children's Research Hospital">
+      <img src="assets/img/logos/Logo_MSKCC.png" alt="Memorial Sloan Kettering Cancer Center">
+      <img src="assets/img/logos/Logo_Adelaide.png" alt="The University of Adelaide">
+      <img src="assets/img/logos/Logo_NYGC.png" alt="New York Genome Center">
+    </div></div>
+    <div class="logo-group"><h3>Funding</h3><div class="logos">
+      <img src="assets/img/logos/Logo_Funding_GIRF.png" alt="GI Research Foundation">
+      <img src="assets/img/logos/Logo_Funding_Worldquant.png" alt="WorldQuant Foundry">
+      <img src="assets/img/logos/Logo_Funding_BIH.png" alt="Bumrungrad International Hospital">
+      <span class="muted">WCM Englander Institute for Precision Medicine</span>
+    </div></div>
+    <div class="logo-group"><h3>Industry</h3><div class="logos">
+      <img src="assets/img/logos/Logo_Bruker.png" alt="Bruker Spatial Biology">
+      <img src="assets/img/logos/Logo_NVIDIA.png" alt="NVIDIA">
+    </div></div>
+  </div></section>
+</div>
+
+<!-- ============ DATA ============ -->
+<div class="page" id="data"><section><div class="wrap">
+  <h2>Data</h2>
+  <div class="split">
+    <div>
+      <p><b>Release v1</b>: 126 acquisitions, 12.4 million cells, 10 organs, as SpatialData (zarr v3) objects with
+        full-resolution morphology images, cell segmentation, annotated count and intensity matrices, donor-core
+        assignments and registered H&amp;E. CC-BY 4.0.</p>
+      <p><a class="btn" href="https://s3.wasabisys.com/saha-public/docs/gallery/index.html">Object gallery</a>
+         <a class="btn ghost" href="mailto:jip2007@med.cornell.edu,chm2042@med.cornell.edu?subject=SAHA%20data%20access%20request">Request data access</a></p>
+      <p class="muted">Public download through the AWS Open Data Program and Zenodo opens at publication; until then,
+        request access and we will send instructions. Astronaut PBMC (STAMP) data: preview only, controlled release pending.</p>
+      <h3 style="margin-top:28px">Interactive browsers</h3>
+      <div class="grid">
+        <a class="card" href="https://saha.bioturing.com/talk2data/?version_id=saha"><h3>BioTuring Talk2Data</h3>
+          <p>Browse samples, cell types and gene expression. Free login required; reload the link after signing in.</p></a>
+        <div class="card"><h3>SAHA Explorer <span class="badge">coming soon</span></h3>
+          <p>Our own deep-zoom browser for H&amp;E, protein and RNA layers on the same tissue.</p></div>
+      </div>
+    </div>
+    <img src="assets/img/atlas_umap.jpg" alt="Joint UMAP of the SAHA CosMx RNA reference coloured by cell type">
+  </div>
+</div></section></div>
+
+<!-- ============ CODE ============ -->
+<div class="page" id="code"><section><div class="wrap">
+  <h2>Code and tools</h2>
+  <a class="card wide" href="https://github.com/saha-project"><h3>SAHA on GitHub — github.com/saha-project</h3>
+    <p>All SAHA repositories: paper code, data tooling, integration and phenotyping pipelines.</p></a>
+  <div class="grid" style="margin-top:16px">
+    <a class="card" href="https://github.com/saha-project/saha-2026-pub"><h3>saha-2026-pub</h3><p>Analysis code for the atlas paper, by figure, with environment files.</p></a>
+    <a class="card" href="https://github.com/saha-project/saha-data-access"><h3>saha-data-access</h3><p>Data schemas, metadata tables, build and validation scripts, access documentation.</p></a>
+    <a class="card" href="https://github.com/saha-project/saha-maxfuse"><h3>saha-maxfuse</h3><p>RNA–protein cell matching and integration (MaxFuse).</p></a>
+    <a class="card" href="https://github.com/saha-project/saha-scimap"><h3>saha-scimap</h3><p>Protein marker gating and phenotyping (SCIMAP).</p></a>
+    <a class="card" href="https://github.com/rendeirolab/LazySlide"><h3>LazySlide</h3><p>Whole-slide H&amp;E analysis used for SAHA histology (Rendeiro lab, CeMM).</p></a>
+    <a class="card" href="https://spatialtouchstone.org/"><h3>Spatial Touchstone</h3><p>Cross-platform quality metrics and benchmarking for imaging spatial transcriptomics (Nature Biotechnology 2025).</p></a>
+  </div>
+</div></section></div>
+
+<!-- ============ PUBLICATIONS ============ -->
+<div class="page" id="publications"><section><div class="wrap">
+  <h2>Publications</h2>
+  <ul class="list">
+    <li><a href="https://www.biorxiv.org/content/10.1101/2025.06.16.658716v3">The Spatial Atlas of Human Anatomy (SAHA): A Multimodal Subcellular-Resolution Reference Across Human Organs</a>
+      <small>Park J, De Gregorio R, Hissong E, et al. bioRxiv 2025 · in peer review</small></li>
+    <li><a href="https://www.nature.com/articles/s41587-025-02811-9">Standardized metrics for assessment and reproducibility of imaging-based spatial transcriptomics datasets</a>
+      <small>Plummer J, Dezem F, Cook D, Park J, et al. Nature Biotechnology 2025 · Spatial Touchstone</small></li>
+    <li><a href="https://doi.org/10.1186/s13059-022-02824-6">Spatial omics technologies at multimodal and single cell/subcellular level</a>
+      <small>Park J, et al. Genome Biology 2022</small></li>
+  </ul>
+  <h3 style="margin-top:28px">How to cite</h3>
+  <p>If you use SAHA data or code, please cite:</p>
+  <pre class="cite">Park J, De Gregorio R, Hissong E, et al. The Spatial Atlas of Human Anatomy (SAHA): A Multimodal
+Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.1101/2025.06.16.658716</pre>
+  <p class="muted">We will update this to the journal version on publication.</p>
+</div></section></div>
+
+<!-- ============ TEAM ============ -->
+<div class="page" id="team"><section><div class="wrap">
+  <h2>Team</h2>
+  <p class="lead">An interdisciplinary collaboration across academia and industry: tissue scientists and
+    pathologists, spatial technology developers, and computational biologists.</p>
+  <!-- Photos: put a square image in assets/img/team/ and replace the initials <span> with <img src="assets/img/team/NAME.jpg" alt=""> -->
+  <h3 class="year">Weill Cornell Medicine</h3>
+  <div class="people">
+    <div><span class="ph">CM</span><b>Christopher E. Mason, Ph.D.</b></div>
+    <div><span class="ph">JP</span><b>Jiwoon Park, Ph.D.</b></div>
+    <div><span class="ph">SH</span><b>Shauna L. Houlihan, Ph.D.</b></div>
+    <div><span class="ph">AA</span><b>Alicia Alonso, Ph.D.</b></div>
+    <div><span class="ph">RD</span><b>Roberto De Gregorio, Ph.D.</b></div>
+  </div>
+  <h3 class="year">Pathology and clinical experts</h3>
+  <div class="people">
+    <div><span class="ph">EH</span><b>Erika Hissong, M.D.</b><small>Pathology and Laboratory Medicine, Weill Cornell Medicine</small></div>
+    <div><span class="ph">SP</span><b>Sanjay Patel, M.D.</b><small>Pathology and Laboratory Medicine, Weill Cornell Medicine</small></div>
+    <div><span class="ph">BR</span><b>Brian Robinson, M.D.</b><small>Pathology and Laboratory Medicine, Weill Cornell Medicine</small></div>
+    <div><span class="ph">RC</span><b>Rohit Chandwani, M.D., Ph.D.</b><small>Weill Cornell Medicine</small></div>
+  </div>
+  <h3 class="year">Collaborators</h3>
+  <div class="people">
+    <div><span class="ph">JP</span><b>Jasmine Plummer, Ph.D.</b><small>St. Jude Children's Research Hospital</small></div>
+    <div><span class="ph">AR</span><b>André F. Rendeiro, Ph.D.</b><small>CeMM Research Center for Molecular Medicine</small></div>
+    <div><span class="ph">LM</span><b>Luciano Martelotto, Ph.D.</b><small>BD Biosciences (previously University of Adelaide)</small></div>
+    <div><span class="ph">PD</span><b>Parambir S. Dulai, M.D.</b><small>Northwestern University</small></div>
+  </div>
+  <h3 class="year">Industry</h3>
+  <div class="people">
+    <div><span class="ph">JB</span><b>Joseph Beechem, Ph.D.</b><small>Bruker Spatial Biology</small></div>
+    <div><span class="ph">EM</span><b>Evelyn Metzger</b><small>Bruker Spatial Biology</small></div>
+    <div><span class="ph">GV</span><b>George Vacek, Ph.D.</b><small>NVIDIA</small></div>
+  </div>
+  <details><summary>Preprint author list (45)</summary>
+    <p class="authors">Jiwoon Park · Roberto De Gregorio · Erika Hissong · Elif Ozcelik · Nicholas Bartelo · Felipe Segato Dezem ·
+      Luke Zhang · Maycon Marção · Hannah Chasteen · Yimin Zheng · Ernesto Abila · Junbum Kim · Jacqueline Proszynski ·
+      Akua A. Agyemang · Mohith Reddy Arikatla · Evelyn Metzger · Stefan Rogers · Prajan Divakar · Parambir S. Dulai ·
+      Jason Reeves · Yan Liang · Liuliu Pan · Sayani Bhattacharjee · Kimberly Young · Ashley Heck · Mithra Korukonda ·
+      Dan McGuire · Lidan Wu · Aster Wardhani · Joseph Beechem · George Church · Steven M Lipkin · Sanjay Patel ·
+      Fabio Socciarelli · Sebastien Monette · Brian Robinson · Massimo Loda · Olivier Elemento · Luciano Martelotto ·
+      Jasmine Plummer · André F. Rendeiro · Alicia Alonso · Robert E. Schwartz · Shauna Lee Houlihan · Christopher E. Mason</p>
+  </details>
+</div></section></div>
+
+<!-- ============ TALKS ============ -->
+<div class="page" id="talks"><section><div class="wrap">
+  <h2>Presentations</h2>
+  <p class="muted">Spatial-omics talks and posters on SAHA and related work.</p>
+  <h3 class="year">2026</h3>
+  <ul class="list">
+    <li>Multi-Omics 2026<small>Invited speaker · Brisbane, December 2026 (upcoming)</small></li>
+    <li>BIOINFO / GIW ISCB-Asia 2026<small>Invited speaker · November 2026 (upcoming)</small></li>
+    <li>Australasian Genomic Technologies Association (AGTA) Annual Scientific Conference<small>Invited speaker</small></li>
+    <li>STOC General Meeting: The Future of Spatial Biology<small>Invited speaker</small></li>
+    <li>Gordon Research Seminar, Single-Cell Genomics: AI and Machine Learning for Single-Cell and Spatial Omics<small>Invited speaker</small></li>
+    <li>Nextgen Omics, Spatial &amp; Data US<small>Invited speaker</small></li>
+    <li>DDN Symposium: The Rise of Spatial Omics<small>Invited speaker</small></li>
+    <li>AGBT General Meeting<small>Abstract-selected speaker</small></li>
+  </ul>
+  <h3 class="year">2025</h3>
+  <ul class="list">
+    <li>EMBL Conference: Spatial Biology<small>Invited speaker</small></li>
+    <li>Human Proteome Organization (HUPO) World Congress<small>Abstract-selected speaker</small></li>
+    <li>American Society of Human Genetics<small>Lightning talk</small></li>
+    <li>American Spatial Biology Congress<small>Invited speaker</small></li>
+    <li>National Society for Histotechnology Convention<small>Keynote</small></li>
+    <li>15th International Workshop on Advanced Genomics<small>Invited speaker</small></li>
+    <li>Complete Molecular Measurement of Human Cells, Organs, and States<small>GIST Digital Biology Symposium · invited speaker</small></li>
+    <li>Single-Cell, Multi-Omics Spatial Profiling and Commercial Human Spaceflight<small>NASA Horizons in Biosciences &amp; Informatics Seminar Series · invited speaker</small></li>
+    <li>The Spatial Atlas of Human Anatomy (SAHA): Comprehensive Multi-Omics Spatial Mapping of Human Organ Systems to Improve Precision Medicine<small>AGBT General Meeting · poster</small></li>
+  </ul>
+  <h3 class="year">2024</h3>
+  <ul class="list">
+    <li>The SAHA project: Unveiling cellular landscapes of health and diseases and orchestrating a new paradigm in precision medicine<small>American Society of Human Genetics · platform talk</small></li>
+    <li>WCM–NVIDIA AI in Medicine Symposium<small>Session speaker</small></li>
+    <li>Mapping Health and Disease on Earth and Beyond<small>Precision Medicine Leaders' Summit, Advances in Single Cell &amp; Spatial Biology · invited speaker</small></li>
+    <li>Mapping Health and Disease on Earth and Beyond: SAHA &amp; Space Omics and Medicine Atlas (SOMA)<small>BioTrac Spatial Biology meeting · invited speaker</small></li>
+    <li>Mapping Health and Disease on Earth and Beyond: SAHA &amp; SOMA<small>Future of Omics Conference · invited speaker</small></li>
+    <li>Mapping Health and Disease on Earth and Beyond: SAHA and SOMA<small>Young Scientists Forum for Korea–US Space Medicine Research · invited speaker</small></li>
+    <li>SAHA project: multiscale spatial insights into lung cancer and diseases<small>University of Cambridge Lung Cancer Workshop · invited speaker</small></li>
+    <li>Mapping Health and Disease on Earth and Beyond: SAHA and SOMA<small>University of Pennsylvania Spatial Biology New Methods Showcase · invited speaker</small></li>
+    <li><a href="https://www.agbt.org/wp-content/uploads/2024/01/GM-24-Draft-Agenda-LZ.pdf">The SAHA project: unveiling cellular landscapes and orchestrating a new paradigm in precision medicine</a><small>AGBT General Meeting · abstract-selected speaker</small></li>
+    <li><a href="https://aacrjournals.org/cancerres/article/84/6_Supplement/4900/738417/Abstract-4900-Spatial-Atlas-of-Human-Anatomy-SAHA">SAHA: A Subcellular, Multiscale Spatial Odyssey of Immune and Gastrointestinal Tissues &amp; Tumors</a><small>AACR Annual Meeting · poster</small></li>
+  </ul>
+  <h3 class="year">2023</h3>
+  <ul class="list">
+    <li>The Spatial Atlas of Human Anatomy (SAHA) Project<small>Spatial Biology Congress Asia · invited speaker and panelist</small></li>
+    <li><a href="https://nanostring.com/events/ashg-2023/">The Spatial Atlas of Human Anatomy: A High-content Spatial Map of the Human Body</a><small>American Society of Human Genetics · plenary (abstract-selected)</small></li>
+    <li>The SAHA Project: A High-content Spatial Map of the Human Body<small>ISMB/ECCB · poster</small></li>
+    <li>Spatial omics and multi-omics integration<small>Bumrungrad International Hospital Genetics Seminar Series · invited speaker</small></li>
+  </ul>
+  <h3 class="year">2022</h3>
+  <ul class="list">
+    <li>Global Engage Spatial Biology Congress Europe<small>Invited speaker</small></li>
+    <li>Experimental Biology: Digital Spatial Profiling — Transcriptomics and Proteomics<small>Invited speaker</small></li>
+  </ul>
+</div></section></div>
+
+<!-- ============ NEWS ============ -->
+<div class="page" id="news"><section><div class="wrap">
+  <h2>News</h2>
+  <ul class="list">
+    <li>SAHA release v1 data available to reviewers<small>Oct 2026 · 126 acquisitions, 12.4M cells, 10 organs</small></li>
+    <li>SAHA preprint posted on bioRxiv<small>Jun 2025 · <a href="https://www.biorxiv.org/content/10.1101/2025.06.16.658716v3">read the preprint</a></small></li>
+    <li>Bruker Spatial Biology to announce advances at AGBT 2025<small>Feb 2025</small></li>
+    <li>NanoString launches the CosMx 6,000-plex RNA assay<small>Feb 2024</small></li>
+    <li>Weill Cornell Medicine and NanoString collaborate to create a comprehensive Spatial Atlas of Human Anatomy<small>Feb 2023</small></li>
+  </ul>
+</div></section></div>
+
+<!-- ============ SUPPORT ============ -->
+<div class="page" id="support"><section><div class="wrap">
+  <h2>Support SAHA</h2>
+  <p class="lead">SAHA is an open resource built by many partners. There are several ways to help it grow.</p>
+  <div class="grid" style="margin-top:24px">
+    <a class="card" href="https://github.com/saha-project/saha-data-access/blob/main/docs/CONTRIBUTING.md"><h3>Contribute data</h3>
+      <p>Institutions with spatial omics data on human tissue can join the atlas. See the submission guide.</p></a>
+    <a class="card" href="mailto:jip2007@med.cornell.edu?subject=SAHA%20partnership"><h3>Partner with us</h3>
+      <p>Technology, pharma and academic partners: co-develop panels, benchmarks and analysis tools.</p></a>
+    <a class="card" href="mailto:chm2042@med.cornell.edu?subject=Supporting%20SAHA"><h3>Fund the atlas</h3>
+      <p>Philanthropic and foundation support sustains open data hosting, new organs and community tools.</p></a>
+    <a class="card" href="https://github.com/saha-project"><h3>Use and cite</h3>
+      <p>Build on the data and code, report issues, and cite the preprint when you do.</p></a>
+  </div>
+</div></section></div>
+
+</main>
+
+<footer id="contact"><div class="wrap">
+  <p>Questions, collaborations or data contributions: Jiwoon Park, Ph.D.
+    (<a href="mailto:jip2007@med.cornell.edu">jip2007@med.cornell.edu</a>) and Christopher E. Mason, Ph.D.
+    (<a href="mailto:chm2042@med.cornell.edu">chm2042@med.cornell.edu</a>), Weill Cornell Medicine.</p>
+  <p class="fine">© SAHA Consortium · Data CC-BY 4.0 · Code MIT ·
+  <a href="https://github.com/saha-project">GitHub</a> · Last updated October 2026</p>
+</div></footer>
+
+<script>
+// One tab visible at a time, chosen by the URL hash (#data, #team, ...); default Home.
+function show(){
+  const id=(location.hash||'#home').slice(1);
+  const page=document.getElementById(id)?.closest('.page')||document.getElementById('home');
+  for(const p of document.querySelectorAll('.page'))p.hidden=p!==page;
+  for(const a of document.querySelectorAll('nav a'))a.classList.toggle('on',a.getAttribute('href')==='#'+page.id);
+  if(page.id===id)requestAnimationFrame(()=>window.scrollTo(0,0));
+}
+addEventListener('hashchange',show);show();
+
+// Organ coverage, release v1 (samples.parquet). Update these rows when the release changes.
+(function(){
+  const organs=[
+    {o:'Pancreas',cosmx:2655620,xenium:1242392,cores:40,acq:15,a:'cx pr xe',st:'Healthy,PDAC'},
+    {o:'Ileum',cosmx:1149326,xenium:1002760,cores:18,acq:27,a:'cx pr xe',st:'Healthy,IBD'},
+    {o:'Appendix',cosmx:613345,xenium:1182133,cores:4,acq:13,a:'cx pr xe',st:'Healthy'},
+    {o:'Lymph node',cosmx:1062736,xenium:0,cores:10,acq:2,a:'cx pr',st:'Healthy'},
+    {o:'Colon',cosmx:1029921,xenium:0,cores:10,acq:9,a:'cx pr',st:'Healthy,CRC'},
+    {o:'Rectum',cosmx:291245,xenium:547659,cores:14,acq:40,a:'cx xe',st:'Healthy,IBD'},
+    {o:'Stomach',cosmx:536119,xenium:0,cores:6,acq:2,a:'cx pr',st:'Healthy'},
+    {o:'Liver',cosmx:469053,xenium:0,cores:6,acq:6,a:'cx pr',st:'Healthy'},
+    {o:'Bone marrow',cosmx:328798,xenium:0,cores:7,acq:7,a:'cx pr',st:'Healthy'},
+    {o:'Prostate',cosmx:238413,xenium:59270,cores:6,acq:5,a:'cx pr xe',st:'Healthy,Prostate cancer'}];
+  const fmt=n=>n.toLocaleString('en-US'), M=n=>(n/1e6).toFixed(2)+'M';
+  const W=1000,row=30,lab=110,val=80,H=organs.length*row+18,max=Math.max(...organs.map(d=>d.cosmx+d.xenium)),pw=W-lab-val;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Cells per organ by platform">`;
+  for(let g=1e6;g<=max;g+=1e6){const x=lab+g/max*pw;s+=`<line x1="${x}" x2="${x}" y1="0" y2="${H-14}" stroke="var(--slate-200)"/><text x="${x}" y="${H-2}" font-size="10" fill="var(--slate-500)" text-anchor="middle">${g/1e6}M</text>`}
+  organs.forEach((d,i)=>{const y=i*row+4,h=row-12,w1=d.cosmx/max*pw,w2=d.xenium/max*pw;
+    s+=`<text x="${lab-10}" y="${y+h/2}" font-size="13" text-anchor="end" dominant-baseline="middle" fill="var(--ink)">${d.o}</text>`;
+    s+=`<rect class="bar" data-i="${i}" data-k="CosMx" x="${lab}" y="${y}" width="${w1}" height="${h}" fill="var(--primary)"/>`;
+    if(d.xenium)s+=`<rect class="bar" data-i="${i}" data-k="Xenium" x="${lab+w1+2}" y="${y}" width="${Math.max(w2-2,0)}" height="${h}" fill="var(--teal)"/>`;
+    s+=`<text x="${lab+w1+w2+8}" y="${y+h/2}" font-size="12" dominant-baseline="middle" fill="var(--slate-600)">${M(d.cosmx+d.xenium)}</text>`});
+  const c=document.getElementById('organChart');c.innerHTML=s+'</svg>';
+  const tip=document.getElementById('tip');
+  c.addEventListener('mousemove',e=>{const r=e.target.closest('.bar');if(!r){tip.hidden=true;return}
+    const d=organs[+r.dataset.i],v=r.dataset.k==='CosMx'?d.cosmx:d.xenium;
+    tip.innerHTML=`<b>${d.o}</b> · ${r.dataset.k}<br>${fmt(v)} cells`;tip.hidden=false;tip.style.left=e.clientX+14+'px';tip.style.top=e.clientY+14+'px'});
+  c.addEventListener('mouseleave',()=>tip.hidden=true);
+  const an={cx:'CosMx RNA',pr:'CosMx protein',xe:'Xenium'};
+  document.getElementById('organTable').innerHTML=organs.map(d=>`<tr><td>${d.o}</td><td class="n">${d.cores}</td><td class="n">${d.acq}</td><td class="n">${fmt(d.cosmx+d.xenium)}</td>
+    <td>${d.a.split(' ').map(k=>`<span class="dot ${k}"></span>${an[k]}`).join(' &nbsp;')}</td>
+    <td>${d.st.split(',').map(t=>`<span class="state${t==='Healthy'?'':' dz'}">${t}</span>`).join(' ')}</td></tr>`).join('');
+})();
+</script>
+</body>
+</html>

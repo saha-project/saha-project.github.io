@@ -1,0 +1,56 @@
+/* ============================================================
+   JIWOON PARK — RESEARCH BRAND TOKENS   (single source of truth)
+   Palette E · "Academic Blue + Crimson"  (Harvard × KAIST neutral)
+   Change a value here and every catalog / slide / figure / page
+   that reads these vars moves with it. Do NOT rename variables.
+   ============================================================ */
+:root{
+  /* --- core brand --- */
+  --primary:#0B4F9E;   /* blue — headers, key marks, primary series */
+  --accent:#A51C30;    /* crimson — accent + emphasis + key signal   */
+  --ink:#101A2B;       /* near-black — body text, dark backgrounds   */
+  --teal:#0E9AA7;      /* quiet 5th — secondary series / positive    */
+
+  /* --- blue ramp (sequential + chart tints) --- */
+  --blue-700:#08284F; --blue-600:#0B4F9E; --blue-500:#1D6FD6;
+  --blue-400:#3B82F6; --blue-300:#93C5FD; --blue-100:#DBEAFE; --blue-50:#EFF6FF;
+
+  /* --- crimson ramp --- */
+  --crimson-700:#7A1523; --crimson-600:#A51C30; --crimson-300:#E8A0AA; --crimson-50:#FBEBED;
+
+  /* --- neutral ramp (slate) --- */
+  --slate-700:#334155; --slate-600:#475569; --slate-500:#64748B; --slate-400:#94A3B8;
+  --slate-300:#CBD5E1; --slate-200:#E2E8F0; --slate-100:#F1F5F9; --slate-50:#F8FAFC;
+  --white:#FFFFFF;
+
+  /* --- semantic signals --- */
+  --success:#0E9AA7;   /* teal   */
+  --warning:#F59E0B;   /* amber  */
+  --danger:#A51C30;    /* crimson (== accent) */
+
+  /* --- legacy catalog aliases (keep catalogs re-skinning automatically) --- */
+  --blue:var(--primary); --blue-2:var(--blue-500); --blue-light:var(--blue-300);
+  --blue-pale:var(--blue-100); --blue-faint:var(--blue-50);
+  --navy:var(--ink); --navy-2:var(--blue-700);
+  --green:var(--teal); --red:var(--accent); --orange:var(--warning);
+
+  /* --- categorical chart order (colorblind-aware, high-contrast first) --- */
+  --cat-1:var(--primary); --cat-2:var(--accent); --cat-3:var(--teal);
+  --cat-4:var(--slate-500); --cat-5:var(--warning); --cat-6:var(--blue-300);
+
+  /* --- typography (Arial + Charter; Charis SIL/Georgia fallback — NIH-OK ≥11pt; Korean auto-fallback) --- */
+  --font:Arial,Helvetica,'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  --font-serif:Charter,'Charis SIL',XCharter,Georgia,'Times New Roman','Noto Serif KR',AppleMyungjo,Batang,serif; /* reports / publication accents / display titles */
+  --font-mono:Consolas,'SF Mono',ui-monospace,Menlo,monospace;
+
+  /* --- type scale (px @ base 16) --- */
+  --fs-display:40px; --fs-h1:28px; --fs-h2:20px; --fs-h3:16px;
+  --fs-body:15px; --fs-small:13px; --fs-caption:12px; --fs-micro:10px;
+  --lh-tight:1.15; --lh-body:1.5;
+
+  /* --- radius / elevation / spacing rhythm (4px base) --- */
+  --r-sm:6px; --r-md:10px; --r-lg:16px;
+  --shadow-1:0 1px 2px rgba(16,26,43,.06),0 2px 6px rgba(16,26,43,.06);
+  --shadow-2:0 2px 4px rgba(16,26,43,.05),0 12px 32px rgba(16,26,43,.10);
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-6:24px; --sp-8:32px;
+}
