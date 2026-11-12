@@ -5,14 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SAHA — Spatial Atlas of Human Anatomy</title>
 <meta name="description" content="The Spatial Atlas of Human Anatomy (SAHA): an open, multimodal, subcellular-resolution spatial reference of human tissues — CosMx and Xenium RNA, protein and H&amp;E across 10 organs and PBMCs.">
-<link rel="icon" href="assets/img/saha_emblem.png">
-<link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="canonical" href="https://saha-project.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAHA">
+<meta property="og:title" content="SAHA — Spatial Atlas of Human Anatomy">
+<meta property="og:description" content="An open, multimodal, subcellular-resolution spatial reference of human tissues: RNA, protein and H&amp;E across 10 organs and PBMCs.">
+<meta property="og:url" content="https://saha-project.org/">
+<meta property="og:image" content="https://saha-project.org/assets/img/atlas_umap.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/saha_emblem_64.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/tokens.css?v=5">
+<link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
 
 <header><div class="wrap">
-  <a class="brand" href="#home"><img src="assets/img/saha_emblem.png" alt="">SAHA</a>
+  <a class="brand" href="#home"><img src="assets/img/saha_emblem_64.png" width="32" height="32" alt="">SAHA</a>
   <nav>
     <a href="#home">Home</a><a href="#data">Data</a><a href="#code">Code</a><a href="#publications">Publications</a>
     <a href="#team">Team</a><a href="#talks">Talks</a><a href="#news">News</a><a href="#support">Support</a>
@@ -32,14 +41,14 @@
         <div class="stat"><b>15.9M</b><span>cells profiled</span></div>
         <div class="stat"><b>150</b><span>donors</span></div>
         <div class="stat"><b>10</b><span>organs, plus PBMCs</span></div>
-        <div class="stat"><b>12.4M</b><span>cells in open release v1</span></div>
+        <div class="stat"><b>12.4M</b><span>cells in data release v1</span></div>
       </div>
       <a class="btn" href="#data">Get the data</a>
       <a class="btn ghost" href="/saha-data-access/gallery/">Browse the gallery</a>
     </div>
     <figure class="pair">
-      <div><img src="assets/img/hero_he.jpg" alt="H&amp;E of a human appendix section"><figcaption>H&amp;E</figcaption></div>
-      <div><img src="assets/img/hero_cells.jpg" alt="The same section, 207,341 cells coloured by cell type from in situ RNA"><figcaption>Spatial transcriptomics: 207,341 cells by type</figcaption></div>
+      <div><img src="assets/img/hero_he.jpg" width="793" height="1100" alt="H&amp;E of a human appendix section"><figcaption>H&amp;E</figcaption></div>
+      <div><img src="assets/img/hero_cells.jpg" width="845" height="1127" alt="The same section, 207,341 cells colored by cell type from in situ RNA"><figcaption>Spatial transcriptomics: 207,341 cells by type</figcaption></div>
     </figure>
   </div></section>
 
@@ -72,7 +81,7 @@
 
   <section id="coverage"><div class="wrap">
     <h2>Organ coverage</h2>
-    <p class="muted">Cells per organ in open release v1, by platform. Hover a bar for exact counts.</p>
+    <p class="muted">Cells per organ in data release v1, by platform. Hover a bar for exact counts.</p>
     <div class="legend"><span><i style="background:var(--primary)"></i>CosMx (RNA + protein)</span>
       <span><i style="background:var(--teal)"></i>Xenium (RNA)</span></div>
     <div id="organChart"></div><div class="tip" id="tip" hidden></div>
@@ -87,9 +96,9 @@
       <li><b>Donated tissue</b><span>Healthy and diseased tissue, given by patients and donors, selected and
         annotated by pathologists.</span></li>
       <li><b>Measured in place</b><span>RNA, protein and H&amp;E captured on the same tissue, so every cell keeps its
-        neighbourhood.</span></li>
+        neighborhood.</span></li>
       <li><b>Integrated</b><span>Cells segmented, typed and matched across platforms and organs into one reference.</span></li>
-      <li><b>Shared openly</b><span>Data, code and browsers released free under open licences for anyone to reuse.</span></li>
+      <li><b>Shared openly</b><span>Data, code and browsers released free under open licenses for anyone to reuse.</span></li>
     </ol>
   </div></section>
 
@@ -103,7 +112,7 @@
       <div class="card"><h3>Fuel for AI</h3><p>Matched histology and molecular data teach models to read molecular
         states from routine H&amp;E slides that every hospital already makes.</p></div>
       <div class="card"><h3>Open to all</h3><p>No paywalls. Students, small labs and hospitals anywhere get the same
-        data as the largest centres.</p></div>
+        data as the largest centers.</p></div>
     </div>
   </div></section>
 
@@ -115,7 +124,7 @@
       <li><time>2023</time>SAHA presented as a plenary talk at the American Society of Human Genetics</li>
       <li><time>2025</time>Spatial Touchstone benchmarking published in <i>Nature Biotechnology</i></li>
       <li><time>2025</time>SAHA atlas preprint posted on bioRxiv</li>
-      <li><time>2026</time>Release v1: 12.4 million cells across 10 organs, shared with reviewers</li>
+      <li><time>2026</time>Release v1: 12.4 million cells across 10 organs, available on request</li>
       <li class="next"><time>Next</time>Public release through AWS Open Data, more organs, and the SAHA Explorer browser</li>
     </ol>
   </div></section>
@@ -128,21 +137,21 @@
   <section id="partners"><div class="wrap">
     <h2>Partners</h2>
     <div class="logo-group"><h3>Academic and research partners</h3><div class="logos">
-      <img src="assets/img/logos/Logo_WCM.png" alt="Weill Cornell Medicine">
-      <img src="assets/img/logos/Logo_StJude.png" alt="St. Jude Children's Research Hospital">
-      <img src="assets/img/logos/Logo_MSKCC.png" alt="Memorial Sloan Kettering Cancer Center">
-      <img src="assets/img/logos/Logo_Adelaide.png" alt="The University of Adelaide">
-      <img src="assets/img/logos/Logo_NYGC.png" alt="New York Genome Center">
+      <img src="assets/img/logos/Logo_WCM.png" loading="lazy" alt="Weill Cornell Medicine">
+      <img src="assets/img/logos/Logo_StJude.png" loading="lazy" alt="St. Jude Children's Research Hospital">
+      <img src="assets/img/logos/Logo_MSKCC.png" loading="lazy" alt="Memorial Sloan Kettering Cancer Center">
+      <img src="assets/img/logos/Logo_Adelaide.png" loading="lazy" alt="The University of Adelaide">
+      <img src="assets/img/logos/Logo_NYGC.png" loading="lazy" alt="New York Genome Center">
     </div></div>
     <div class="logo-group"><h3>Funding</h3><div class="logos">
-      <img src="assets/img/logos/Logo_Funding_GIRF.png" alt="GI Research Foundation">
-      <img src="assets/img/logos/Logo_Funding_Worldquant.png" alt="WorldQuant Foundry">
-      <img src="assets/img/logos/Logo_Funding_BIH.png" alt="Bumrungrad International Hospital">
+      <img src="assets/img/logos/Logo_Funding_GIRF.png" loading="lazy" alt="GI Research Foundation">
+      <img src="assets/img/logos/Logo_Funding_Worldquant.png" loading="lazy" alt="WorldQuant Foundry">
+      <img src="assets/img/logos/Logo_Funding_BIH.png" loading="lazy" alt="Bumrungrad International Hospital">
       <span class="muted">WCM Englander Institute for Precision Medicine</span>
     </div></div>
     <div class="logo-group"><h3>Industry</h3><div class="logos">
-      <img src="assets/img/logos/Logo_Bruker.png" alt="Bruker Spatial Biology">
-      <img src="assets/img/logos/Logo_NVIDIA.png" alt="NVIDIA">
+      <img src="assets/img/logos/Logo_Bruker.png" loading="lazy" alt="Bruker Spatial Biology">
+      <img src="assets/img/logos/Logo_NVIDIA.png" loading="lazy" alt="NVIDIA">
     </div></div>
   </div></section>
 </div>
@@ -158,7 +167,7 @@
       <p><a class="btn" href="/saha-data-access/gallery/">Object gallery</a>
          <a class="btn ghost" href="mailto:jip2007@med.cornell.edu,chm2042@med.cornell.edu?subject=SAHA%20data%20access%20request">Request data access</a></p>
       <p class="muted">Public download through the AWS Open Data Program and Zenodo opens at publication; until then,
-        request access and we will send instructions. Astronaut PBMC (STAMP) data: preview only, controlled release pending.</p>
+        request access and we will send instructions. A PBMC cohort is held back from this release and will be shared under controlled access once consent terms are in place.</p>
       <h3 style="margin-top:28px">Interactive browsers</h3>
       <div class="grid">
         <a class="card" href="https://saha.bioturing.com/talk2data/?version_id=saha"><h3>BioTuring Talk2Data</h3>
@@ -167,7 +176,7 @@
           <p>Our own deep-zoom browser for H&amp;E, protein and RNA layers on the same tissue.</p></div>
       </div>
     </div>
-    <img src="assets/img/atlas_umap.jpg" alt="Joint UMAP of the SAHA CosMx RNA reference coloured by cell type">
+    <img src="assets/img/atlas_umap.jpg" width="1400" height="1129" loading="lazy" alt="Joint UMAP of the SAHA CosMx RNA reference colored by cell type">
   </div>
 </div></section></div>
 
@@ -190,8 +199,8 @@
 <div class="page" id="publications"><section><div class="wrap">
   <h2>Publications</h2>
   <ul class="list">
-    <li><a href="https://www.biorxiv.org/content/10.1101/2025.06.16.658716v3">The Spatial Atlas of Human Anatomy (SAHA): A Multimodal Subcellular-Resolution Reference Across Human Organs</a>
-      <small>Park J, De Gregorio R, Hissong E, et al. bioRxiv 2025 · in peer review</small></li>
+    <li><a href="https://doi.org/10.1101/2025.06.16.658716">The Spatial Atlas of Human Anatomy (SAHA): A Multimodal Subcellular-Resolution Reference Across Human Organs</a>
+      <small>Park J, De Gregorio R, Hissong E, et al. bioRxiv 2025 · preprint</small></li>
     <li><a href="https://www.nature.com/articles/s41587-025-02811-9">Standardized metrics for assessment and reproducibility of imaging-based spatial transcriptomics datasets</a>
       <small>Plummer J, Dezem F, Cook D, Park J, et al. Nature Biotechnology 2025 · Spatial Touchstone</small></li>
     <li><a href="https://doi.org/10.1186/s13059-022-02824-6">Spatial omics technologies at multimodal and single cell/subcellular level</a>
@@ -286,7 +295,7 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
     <li>Mapping Health and Disease on Earth and Beyond: SAHA and SOMA<small>Young Scientists Forum for Korea–US Space Medicine Research · invited speaker</small></li>
     <li>SAHA project: multiscale spatial insights into lung cancer and diseases<small>University of Cambridge Lung Cancer Workshop · invited speaker</small></li>
     <li>Mapping Health and Disease on Earth and Beyond: SAHA and SOMA<small>University of Pennsylvania Spatial Biology New Methods Showcase · invited speaker</small></li>
-    <li><a href="https://www.agbt.org/wp-content/uploads/2024/01/GM-24-Draft-Agenda-LZ.pdf">The SAHA project: unveiling cellular landscapes and orchestrating a new paradigm in precision medicine</a><small>AGBT General Meeting · abstract-selected speaker</small></li>
+    <li><a href="https://web.archive.org/web/20240716025125/https://www.agbt.org/wp-content/uploads/2024/01/GM-24-Draft-Agenda-LZ.pdf">The SAHA project: unveiling cellular landscapes and orchestrating a new paradigm in precision medicine</a><small>AGBT General Meeting · abstract-selected speaker</small></li>
     <li><a href="https://aacrjournals.org/cancerres/article/84/6_Supplement/4900/738417/Abstract-4900-Spatial-Atlas-of-Human-Anatomy-SAHA">SAHA: A Subcellular, Multiscale Spatial Odyssey of Immune and Gastrointestinal Tissues &amp; Tumors</a><small>AACR Annual Meeting · poster</small></li>
   </ul>
   <h3 class="year">2023</h3>
@@ -307,8 +316,8 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
 <div class="page" id="news"><section><div class="wrap">
   <h2>News</h2>
   <ul class="list">
-    <li>SAHA release v1 data available to reviewers<small>Oct 2026 · 126 acquisitions, 12.4M cells, 10 organs</small></li>
-    <li>SAHA preprint posted on bioRxiv<small>Jun 2025 · <a href="https://www.biorxiv.org/content/10.1101/2025.06.16.658716v3">read the preprint</a></small></li>
+    <li>SAHA release v1 data available on request<small>Oct 2026 · 126 acquisitions, 12.4M cells, 10 organs</small></li>
+    <li>SAHA preprint posted on bioRxiv<small>Jun 2025 · <a href="https://doi.org/10.1101/2025.06.16.658716">read the preprint</a></small></li>
     <li>Bruker Spatial Biology to announce advances at AGBT 2025<small>Feb 2025</small></li>
     <li>NanoString launches the CosMx 6,000-plex RNA assay<small>Feb 2024</small></li>
     <li>Weill Cornell Medicine and NanoString collaborate to create a comprehensive Spatial Atlas of Human Anatomy<small>Feb 2023</small></li>
@@ -353,8 +362,8 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
   <h2>Frequently asked questions</h2>
   <details><summary>Is SAHA data free to use?</summary><p>Yes. Data are released under CC-BY 4.0 and code under MIT:
     reuse them for any purpose, with attribution.</p></details>
-  <details><summary>When will the data be publicly downloadable?</summary><p>Release v1 is shared with reviewers now.
-    Public download through the AWS Open Data Program and Zenodo opens when the atlas paper is published. Until then,
+  <details><summary>When will the data be publicly downloadable?</summary><p>Release v1 is available now on request.
+    Public download through the AWS Open Data Program and Zenodo will open when the atlas paper is published. Until then,
     <a href="#data">request access</a>.</p></details>
   <details><summary>Can my institution contribute data?</summary><p>Yes. We welcome spatial omics data on human tissue.
     See the <a href="https://github.com/saha-project/saha-data-access/blob/main/docs/CONTRIBUTING.md">submission guide</a>
@@ -376,7 +385,7 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
     (<a href="mailto:jip2007@med.cornell.edu">jip2007@med.cornell.edu</a>) and Christopher E. Mason, Ph.D.
     (<a href="mailto:chm2042@med.cornell.edu">chm2042@med.cornell.edu</a>), Weill Cornell Medicine.</p>
   <p class="fine">© SAHA Consortium · Data CC-BY 4.0 · Code MIT ·
-  <a href="https://github.com/saha-project">GitHub</a> · Last updated October 2026</p>
+  <a href="https://github.com/saha-project">GitHub</a> · Last updated November 2026</p>
 </div></footer>
 
 <script>
@@ -405,7 +414,7 @@ addEventListener('hashchange',show);show();
     {o:'Prostate',cosmx:238413,xenium:59270,cores:6,acq:5,a:'cx pr xe',st:'Healthy,Prostate cancer'}];
   const fmt=n=>n.toLocaleString('en-US'), M=n=>(n/1e6).toFixed(2)+'M';
   const W=1000,row=30,lab=110,val=80,H=organs.length*row+18,max=Math.max(...organs.map(d=>d.cosmx+d.xenium)),pw=W-lab-val;
-  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Cells per organ by platform">`;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Bar chart of cells per organ in release v1, CosMx and Xenium; the same counts are in the table below">`;
   for(let g=1e6;g<=max;g+=1e6){const x=lab+g/max*pw;s+=`<line x1="${x}" x2="${x}" y1="0" y2="${H-14}" stroke="var(--slate-200)"/><text x="${x}" y="${H-2}" font-size="10" fill="var(--slate-500)" text-anchor="middle">${g/1e6}M</text>`}
   organs.forEach((d,i)=>{const y=i*row+4,h=row-12,w1=d.cosmx/max*pw,w2=d.xenium/max*pw;
     s+=`<text x="${lab-10}" y="${y+h/2}" font-size="13" text-anchor="end" dominant-baseline="middle" fill="var(--ink)">${d.o}</text>`;
