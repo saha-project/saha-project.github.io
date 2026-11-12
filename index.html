@@ -15,8 +15,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/saha_emblem_64.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/tokens.css?v=6">
-<link rel="stylesheet" href="assets/style.css?v=6">
+<link rel="stylesheet" href="assets/tokens.css?v=7">
+<link rel="stylesheet" href="assets/style.css?v=7">
 </head>
 <body>
 
@@ -158,7 +158,7 @@
 
 <!-- ============ DATA ============ -->
 <div class="page" id="data"><section><div class="wrap">
-  <h2>Data</h2>
+  <h1 class="tab-title" tabindex="-1">Data</h1>
   <div class="split">
     <div>
       <p><b>Release v1</b>: 126 acquisitions, 12.4 million cells, 10 organs, as SpatialData (zarr v3) objects with
@@ -182,7 +182,7 @@
 
 <!-- ============ CODE ============ -->
 <div class="page" id="code"><section><div class="wrap">
-  <h2>Code and tools</h2>
+  <h1 class="tab-title" tabindex="-1">Code and tools</h1>
   <a class="card wide" href="https://github.com/saha-project"><h3>SAHA on GitHub — github.com/saha-project</h3>
     <p>All SAHA repositories: paper code, data tooling, integration and phenotyping pipelines.</p></a>
   <div class="grid" style="margin-top:16px">
@@ -197,7 +197,7 @@
 
 <!-- ============ PUBLICATIONS ============ -->
 <div class="page" id="publications"><section><div class="wrap">
-  <h2>Publications</h2>
+  <h1 class="tab-title" tabindex="-1">Publications</h1>
   <ul class="list">
     <li><a href="https://doi.org/10.1101/2025.06.16.658716">The Spatial Atlas of Human Anatomy (SAHA): A Multimodal Subcellular-Resolution Reference Across Human Organs</a>
       <small>Park J, De Gregorio R, Hissong E, et al. bioRxiv 2025 · preprint</small></li>
@@ -215,7 +215,7 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
 
 <!-- ============ TEAM ============ -->
 <div class="page" id="team"><section><div class="wrap">
-  <h2>Team</h2>
+  <h1 class="tab-title" tabindex="-1">Team</h1>
   <p class="lead">An interdisciplinary collaboration across academia and industry: tissue scientists and
     pathologists, spatial technology developers, and computational biologists.</p>
   <!-- Photos: put a square image in assets/img/team/ and replace the initials <span> with <img src="assets/img/team/NAME.jpg" alt=""> -->
@@ -238,34 +238,36 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
   <div class="people">
     <div><span class="ph">JP</span><b>Jasmine Plummer, Ph.D.</b><small>St. Jude Children's Research Hospital</small></div>
     <div><span class="ph">AR</span><b>André F. Rendeiro, Ph.D.</b><small>CeMM Research Center for Molecular Medicine</small></div>
-    <div><span class="ph">LM</span><b>Luciano Martelotto, Ph.D.</b><small>BD Biosciences (previously University of Adelaide)</small></div>
+    <div><span class="ph">LM</span><b>Luciano Martelotto, Ph.D.</b><small>Waters Biosciences (previously University of Adelaide)</small></div>
     <div><span class="ph">PD</span><b>Parambir S. Dulai, M.D.</b><small>Northwestern University</small></div>
   </div>
   <h3 class="year">Industry</h3>
   <div class="people">
     <div><span class="ph">JB</span><b>Joseph Beechem, Ph.D.</b><small>Bruker Spatial Biology</small></div>
-    <div><span class="ph">EM</span><b>Evelyn Metzger</b><small>Bruker Spatial Biology</small></div>
+    <div><span class="ph">EM</span><b>Evelyn Metzger, Ph.D.</b><small>Bruker Spatial Biology</small></div>
     <div><span class="ph">GV</span><b>George Vacek, Ph.D.</b><small>NVIDIA</small></div>
   </div>
-  <details><summary>Preprint author list (45)</summary>
+  <details><summary>Preprint author list (52)</summary>
     <p class="authors">Jiwoon Park · Roberto De Gregorio · Erika Hissong · Elif Ozcelik · Nicholas Bartelo · Felipe Segato Dezem ·
-      Luke Zhang · Maycon Marção · Hannah Chasteen · Yimin Zheng · Ernesto Abila · Junbum Kim · Jacqueline Proszynski ·
-      Akua A. Agyemang · Mohith Reddy Arikatla · Evelyn Metzger · Stefan Rogers · Prajan Divakar · Parambir S. Dulai ·
-      Jason Reeves · Yan Liang · Liuliu Pan · Sayani Bhattacharjee · Kimberly Young · Ashley Heck · Mithra Korukonda ·
-      Dan McGuire · Lidan Wu · Aster Wardhani · Joseph Beechem · George Church · Steven M Lipkin · Sanjay Patel ·
-      Fabio Socciarelli · Sebastien Monette · Brian Robinson · Massimo Loda · Olivier Elemento · Luciano Martelotto ·
-      Jasmine Plummer · André F. Rendeiro · Alicia Alonso · Robert E. Schwartz · Shauna Lee Houlihan · Christopher E. Mason</p>
+      Luke Zhang · Maycon Marção · Hannah DuBose · Yimin Zheng · Ernesto Abila · Junbum Kim ·
+      Theodore Nelson · Jacqueline Proszynski · Akua A. Agyemang · Mohith Reddy Arikatla · Arjumand Wani · Yutian Liu ·
+      Evelyn Metzger · Stefan Rogers · Prajan Divakar · Parambir S. Dulai · Jason Reeves · Yan Liang ·
+      Liuliu Pan · Sayani Bhattacharjee · Michael Patrick · Kimberly Young · Ashley Heck · Mithra Korukonda ·
+      Dan McGuire · Lidan Wu · Aster Wardhani · Joseph Beechem · George Church · Steven M Lipkin ·
+      Aaron Berliner · Sanjay Patel · Fabio Socciarelli · Jan Krumsiek · Rohit Chandwani · Sebastien Monette ·
+      Brian Robinson · Massimo Loda · Olivier Elemento · Luciano Martelotto · Jasmine Plummer · André F. Rendeiro ·
+      Alicia Alonso · Robert E. Schwartz · Shauna Lee Houlihan · Christopher E. Mason</p>
   </details>
 </div></section></div>
 
 <!-- ============ TALKS ============ -->
 <div class="page" id="talks"><section><div class="wrap">
-  <h2>Presentations</h2>
+  <h1 class="tab-title" tabindex="-1">Presentations</h1>
   <p class="muted">Spatial-omics talks and posters on SAHA and related work.</p>
   <h3 class="year">2026</h3>
   <ul class="list">
     <li>Multi-Omics 2026<small>Invited speaker · Brisbane, December 2026 (upcoming)</small></li>
-    <li>BIOINFO / GIW ISCB-Asia 2026<small>Invited speaker · November 2026 (upcoming)</small></li>
+    <li>BIOINFO / GIW ISCB-Asia 2026<small>Invited speaker · November 19, 2026 (upcoming)</small></li>
     <li>Australasian Genomic Technologies Association (AGTA) Annual Scientific Conference<small>Invited speaker</small></li>
     <li>STOC General Meeting: The Future of Spatial Biology<small>Invited speaker</small></li>
     <li>Gordon Research Seminar, Single-Cell Genomics: AI and Machine Learning for Single-Cell and Spatial Omics<small>Invited speaker</small></li>
@@ -314,7 +316,7 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
 
 <!-- ============ NEWS ============ -->
 <div class="page" id="news"><section><div class="wrap">
-  <h2>News</h2>
+  <h1 class="tab-title" tabindex="-1">News</h1>
   <ul class="list">
     <li>SAHA release v1 data available on request<small>Oct 2026 · 126 acquisitions, 12.4M cells, 10 organs</small></li>
     <li>SAHA preprint posted on bioRxiv<small>Jun 2025 · <a href="https://doi.org/10.1101/2025.06.16.658716">read the preprint</a></small></li>
@@ -326,7 +328,7 @@ Subcellular-Resolution Reference Across Human Organs. bioRxiv (2025). doi:10.110
 
 <!-- ============ SUPPORT ============ -->
 <div class="page" id="support"><section><div class="wrap">
-  <h2>Support SAHA</h2>
+  <h1 class="tab-title" tabindex="-1">Support SAHA</h1>
   <p class="lead">SAHA is an open resource built by many partners. There are several ways to help it grow.</p>
   <div class="grid" style="margin-top:24px">
     <a class="card" href="https://github.com/saha-project/saha-data-access/blob/main/docs/CONTRIBUTING.md"><h3>Contribute data</h3>
@@ -396,6 +398,7 @@ function show(){
   for(const p of document.querySelectorAll('.page'))p.hidden=p!==page;
   for(const a of document.querySelectorAll('nav a'))a.classList.toggle('on',a.getAttribute('href')==='#'+page.id);
   if(page.id===id)requestAnimationFrame(()=>window.scrollTo(0,0));
+  if(location.hash&&page.id===id)page.querySelector('h1')?.focus({preventScroll:true});
 }
 addEventListener('hashchange',show);show();
 

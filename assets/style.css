@@ -144,3 +144,4 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--warning);outline-o
 img{max-width:100%;height:auto} /* width/height attributes reserve space without fixing the height */
 /* ponytail: initials hidden until team photos arrive; drop this rule when <img> avatars are added */
 .people .ph{display:none} .people div{display:block} .people small{margin-top:2px}
+.tab-title{font-size:var(--fs-h1);color:var(--primary)} .tab-title:focus{outline:none}
